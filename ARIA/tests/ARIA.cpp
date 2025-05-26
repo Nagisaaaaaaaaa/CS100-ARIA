@@ -78,6 +78,18 @@ suite<"ARIA"> _ = [] {
     expect(Pow<2>(2U) == 4U);
     expect(Pow<2>(3.3F) == 3.3F * 3.3F);
     expect(Pow<2>(4.44) == 4.44 * 4.44);
+
+    static_assert(Pow<3>(0) == 0);
+    static_assert(Pow<3>(1) == 1);
+    static_assert(Pow<3>(2U) == 8U);
+    static_assert(Pow<3>(3.3F) == 3.3F * 3.3F * 3.3F);
+    static_assert(Pow<3>(4.44) == 4.44 * 4.44 * 4.44);
+
+    expect(Pow<3>(0) == 0);
+    expect(Pow<3>(1) == 1);
+    expect(Pow<3>(2U) == 8U);
+    expect(Pow<3>(3.3F) == 3.3F * 3.3F * 3.3F);
+    expect(Pow<3>(4.44) == 4.44 * 4.44 * 4.44);
   };
 };
 
