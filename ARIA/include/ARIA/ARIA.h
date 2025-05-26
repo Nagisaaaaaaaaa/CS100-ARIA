@@ -45,4 +45,20 @@ struct ThreadUnsafe {};
 /// \brief A commonly-used policy, means the type is thread-safe.
 struct ThreadSafe {};
 
+//
+//
+//
+/// \brief Compute `a^n`, where `n` is determined at compile-time.
+template <u32 n, typename T>
+[[nodiscard]] static constexpr T Pow(const T &a) {
+  if constexpr (n == 0)
+    return static_cast<T>(1);
+
+  T half = Pow<n / 2>(a);
+  if constexpr (n % 2)
+    return half * half * a;
+  else
+    return half * half;
+}
+
 }; // namespace ARIA
