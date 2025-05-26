@@ -12,15 +12,15 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(CPM)
 
 CPMAddPackage(
-  NAME ut
-  GITHUB_REPOSITORY boost-ext/ut
-  GIT_TAG v2.3.1
-)
-
-CPMAddPackage(
   NAME glm
   GITHUB_REPOSITORY g-truc/glm
   GIT_TAG 1.0.1
+)
+
+CPMAddPackage(
+  NAME ut
+  GITHUB_REPOSITORY boost-ext/ut
+  GIT_TAG v2.3.1
 )
 
 add_subdirectory(${PROJECT_NAME})
