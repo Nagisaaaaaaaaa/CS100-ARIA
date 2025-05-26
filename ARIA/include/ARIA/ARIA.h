@@ -16,9 +16,6 @@
 
 namespace ARIA {
 
-//
-//
-//
 // Aliases for arithmetic types.
 
 using i8 = int8_t;
