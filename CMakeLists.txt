@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.25.2)
 project(ARIA LANGUAGES CXX)
 
+option(ARIA_ENABLE_TESTS "Build ARIA testing suite" ON)
+
 include(FetchContent)
 FetchContent_Declare(
   CPM
