@@ -6,6 +6,6 @@ target_include_directories(${PROJECT_NAME} INTERFACE
 
 target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_23)
 
-if(ARIA_ENABLE_TESTS)
+if(ARIA_ENABLE_TESTING)
   add_subdirectory(tests)
 endif()
