@@ -32,6 +32,8 @@ suite<"ARIA"> _ = [] {
 
     static_assert(std::is_signed_v<f32>);
     static_assert(std::is_signed_v<f64>);
+
+    static_assert(std::is_same_v<Real, f32> || std::is_same_v<Real, f64>);
   };
 
   //
