@@ -161,27 +161,3 @@
   /// ```
   #define ARIA_ASSERT(...) ((void)0)
 #endif // !defined(NDEBUG)
-
-#define __ARIA_EXPECT1(cond)                                                                                           \
-  do {                                                                                                                 \
-    if (!(cond)) {                                                                                                     \
-      fprintf(stderr, "Expectation (%s) failed at [%s:%d]\n", #cond, __FILE__, __LINE__);                              \
-      exit(EXIT_FAILURE);                                                                                              \
-    }                                                                                                                  \
-  } while (0)
-
-#define __ARIA_EXPECT2(cond, explanation)                                                                              \
-  do {                                                                                                                 \
-    if (!(cond)) {                                                                                                     \
-      fprintf(stderr, "Expectation (%s) failed at [%s:%d] (" explanation ")\n", #cond, __FILE__, __LINE__);            \
-      exit(EXIT_FAILURE);                                                                                              \
-    }                                                                                                                  \
-  } while (0)
-
-/// \brief Expect that the condition is true.
-///
-/// \example ```c
-/// ARIA_EXPECT(a == 1);
-/// ARIA_EXPECT(a == 1, "`a` does not equal to 1");
-/// ```
-#define ARIA_EXPECT(...) __ARIA_EXPAND(__ARIA_EXPAND(ARIA_CONCAT(__ARIA_EXPECT, ARIA_NUM_OF(__VA_ARGS__)))(__VA_ARGS__))

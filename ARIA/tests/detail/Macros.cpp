@@ -48,9 +48,6 @@ suite<"Macros"> _ = [] {
     int a = 1;
     ARIA_ASSERT(a == 1);
     ARIA_ASSERT(a == 1, "`a` does not equal to 1");
-
-    ARIA_EXPECT(a == 1);
-    ARIA_EXPECT(a == 1, "`a` does not equal to 1");
   };
 };
 
