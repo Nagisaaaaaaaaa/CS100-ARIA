@@ -1,5 +1,15 @@
 #pragma once
 
+/// \file
+/// \brief ARIA leverages the `glm` library for all linear algebra operations.
+/// Please ensure you are familiar with `glm` before continue.
+/// For more information, see: https://github.com/g-truc/glm.
+
+//
+//
+//
+//
+//
 #include "ARIA/ARIA.h"
 
 #include <glm/glm.hpp>
