@@ -32,7 +32,7 @@ suite<"Macros"> _ = [] {
     ARIA_IF(1, str = "1");
     expect(str == "1");
     ARIA_IF(0, str = "0");
-    expect(str == "0");
+    expect(str == "1");
     ARIA_IF(true, str = "true");
     expect(str == "true");
     ARIA_IF(false, str = "false");
