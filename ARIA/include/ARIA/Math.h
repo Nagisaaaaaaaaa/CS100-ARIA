@@ -16,6 +16,8 @@
 
 namespace ARIA {
 
+// Aliases for linear algebra types.
+
 template <typename T>
 using Mat2 = glm::mat<2, 2, T, glm::defaultp>;
 using Mat2i = Mat2<i32>;
