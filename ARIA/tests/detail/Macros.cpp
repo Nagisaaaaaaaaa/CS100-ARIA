@@ -20,7 +20,7 @@ suite<"Macros"> _ = [] {
     static_assert(ARIA_NUM_OF(a, b, c) == 3);
 
     static_assert(ARIA_CONCAT(233, 466) == 233466);
-    static_assert(ARIA_ANON(999) == 99920);
+    static_assert(ARIA_ANON(999) == 99923);
 
     static_assert(ARIA_COND(1, 5, 6) == 5);
     static_assert(ARIA_COND(0, 5, 6) == 6);
