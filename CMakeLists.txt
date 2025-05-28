@@ -2,8 +2,9 @@ cmake_minimum_required(VERSION 3.25.2)
 project(ARIA LANGUAGES CXX)
 
 option(ARIA_ENABLE_TESTING "Build ARIA testing suite" ON)
+option(ARIA_ENABLE_DEPENDENCIES "Automatically download dependency libraries if they are not present" ON)
 
-if(NOT COMMAND CPMAddPackage)
+if(ARIA_ENABLE_DEPENDENCIES AND NOT COMMAND CPMAddPackage)
   include(FetchContent)
   FetchContent_Declare(
     CPM
@@ -13,7 +14,7 @@ if(NOT COMMAND CPMAddPackage)
   FetchContent_MakeAvailable(CPM)
 endif()
 
-if(NOT TARGET glm::glm)
+if(ARIA_ENABLE_DEPENDENCIES AND NOT TARGET glm::glm)
   CPMAddPackage(
     NAME glm
     GITHUB_REPOSITORY g-truc/glm
@@ -21,7 +22,7 @@ if(NOT TARGET glm::glm)
   )
 endif()
 
-if(NOT TARGET Boost::ut)
+if(ARIA_ENABLE_DEPENDENCIES AND NOT TARGET Boost::ut)
   CPMAddPackage(
     NAME ut
     GITHUB_REPOSITORY boost-ext/ut
