@@ -3,13 +3,15 @@ project(ARIA LANGUAGES CXX)
 
 option(ARIA_ENABLE_TESTING "Build ARIA testing suite" ON)
 
-include(FetchContent)
-FetchContent_Declare(
-  CPM
-  GIT_REPOSITORY https://github.com/cpm-cmake/CPM.cmake.git
-  GIT_TAG v0.42.0
-)
-FetchContent_MakeAvailable(CPM)
+if(NOT COMMAND CPMAddPackage)
+  include(FetchContent)
+  FetchContent_Declare(
+    CPM
+    GIT_REPOSITORY https://github.com/cpm-cmake/CPM.cmake.git
+    GIT_TAG v0.42.0
+  )
+  FetchContent_MakeAvailable(CPM)
+endif()
 
 CPMAddPackage(
   NAME glm
