@@ -13,16 +13,20 @@ if(NOT COMMAND CPMAddPackage)
   FetchContent_MakeAvailable(CPM)
 endif()
 
-CPMAddPackage(
-  NAME glm
-  GITHUB_REPOSITORY g-truc/glm
-  GIT_TAG 1.0.1
-)
+if(NOT TARGET glm::glm)
+  CPMAddPackage(
+    NAME glm
+    GITHUB_REPOSITORY g-truc/glm
+    GIT_TAG 1.0.1
+  )
+endif()
 
-CPMAddPackage(
-  NAME ut
-  GITHUB_REPOSITORY boost-ext/ut
-  GIT_TAG v2.3.1
-)
+if(NOT TARGET Boost::ut)
+  CPMAddPackage(
+    NAME ut
+    GITHUB_REPOSITORY boost-ext/ut
+    GIT_TAG v2.3.1
+  )
+endif()
 
 add_subdirectory(${PROJECT_NAME})
