@@ -5,6 +5,10 @@ option(ARIA_ENABLE_TESTING "Build ARIA testing suite" ON)
 option(ARIA_ENABLE_DEPENDENCIES "Automatically download dependency libraries if they are not present" ON)
 
 if(ARIA_ENABLE_DEPENDENCIES AND NOT COMMAND CPMAddPackage)
+  if(NOT DEFINED ENV{CPM_SOURCE_CACHE})
+    message(FATAL_ERROR "Environment variable `CPM_SOURCE_CACHE` is not defined")
+  endif()
+
   include(FetchContent)
   FetchContent_Declare(
     CPM
